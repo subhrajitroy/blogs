@@ -1,3 +1,4 @@
 class Post < ActiveRecord::Base
-  has_one :author
+  validates :content, :length => {:maximum => 100}
+  belongs_to :author
 end

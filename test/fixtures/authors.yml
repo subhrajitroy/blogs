@@ -2,8 +2,6 @@
 
 one:
   name: MyString
-  has_many: 
 
 two:
   name: MyString
-  has_many: 

@@ -3,7 +3,6 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @posts }
@@ -43,7 +42,6 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    author = Author.find_by_name params["post[name]"]
     @post = Post.new(params[:post])
     @post.author= author
 

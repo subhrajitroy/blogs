@@ -46,4 +46,11 @@ class PostsControllerTest < ActionController::TestCase
 
     assert_redirected_to posts_path
   end
+
+  test "should report error if blog content is mor than 10 chars long" do
+    _content = "aaaaaaaaaaaaa"
+    @post.content=_content
+    post :create, @post.to_param
+    assert_response :failed
+  end
 end
