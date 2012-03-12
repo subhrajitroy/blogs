@@ -6,9 +6,7 @@ Blog::Application.routes.draw do
 
   resources :posts
 
-  match "*" => "home#index"
-
-  get "welcome/greet"
+  get "page/about_us"
 
   get "home/index"
 
