@@ -1,10 +1,21 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Ruby on Rails Tutorial Sample App | <%= @title %></title>
+<head>
+    <title><%= page_title(@title) %></title>
     <%= csrf_meta_tag %>
-  </head>
-  <body>
-    <%= yield %>
-  </body>
+</head>
+<body>
+<table>
+    <tr>
+        <td>This is header</td>
+    </tr>
+    <tr>
+        <td><%= yield %></td>
+    </tr>
+    <tr>
+        <td>This is footer</td>
+    </tr>
+</table>
+<%= yield %>
+</body>
 </html>
