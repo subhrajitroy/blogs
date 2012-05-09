@@ -5,17 +5,10 @@
     <%= csrf_meta_tag %>
 </head>
 <body>
-<table>
-    <tr>
-        <td>This is header</td>
-    </tr>
-    <tr>
-        <td><%= yield %></td>
-    </tr>
-    <tr>
-        <td>This is footer</td>
-    </tr>
-</table>
+
 <%= yield %>
+
+<%= yield(:feedback) %>
+
 </body>
 </html>

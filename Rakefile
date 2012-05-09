@@ -4,4 +4,11 @@
 
 require File.expand_path('../config/application', __FILE__)
 
+task :hello do
+  pwd = File.dirname(__FILE__)
+  helper_path = pwd.to_s << "/spec/spec_helper.rb"
+  puts "Hello #{File.dirname(File.path(helper_path))}"
+end
+
+
 Blog::Application.load_tasks

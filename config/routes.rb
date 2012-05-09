@@ -1,16 +1,14 @@
 Blog::Application.routes.draw do
 
+
   resources :authors
 
-  resources :categories
 
   resources :posts
 
-  get "page/about_us"
 
   get "home/index"
 
-  root :to => 'home#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

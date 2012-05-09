@@ -44,5 +44,10 @@ module Blog
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    config.logger=Logger.new(STDOUT)
+    config.log_level=:debug
+
+    config.active_record.schema_format=:sql
   end
 end

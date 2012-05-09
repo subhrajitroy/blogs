@@ -41,4 +41,5 @@ group :test do
   gem 'nokogiri', '1.5.2'
   # Pretty printed test output
   gem 'turn', '~> 0.8.3', :require => false
+  gem 'jasmine'
 end

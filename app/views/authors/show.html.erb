@@ -1,11 +1,24 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
-  <%= @author.name %>
+    <b>Name:</b>
+    <%= @author.name %>
 </p>
 
 
 
 <%= link_to 'Edit', edit_author_path(@author) %> |
 <%= link_to 'Back', authors_path %>
+
+
+
+
+
+
+
+<%
+   @feedback = Feedback.new(@author.name,"You are an awsome story teller")
+%>
+
+
+<% render @feedback %>

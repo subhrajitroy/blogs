@@ -1,23 +1,17 @@
 <h1>Listing authors</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @authors.each do |author| %>
-  <tr>
-    <td><%= author.name %></td>
-    <td><%= link_to 'Show', author %></td>
-    <td><%= link_to 'Edit', edit_author_path(author) %></td>
-    <td><%= link_to 'Destroy', author, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
+<table border="1">
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Books</th>
+    </tr>
+    <%= render :partial => "layouts/author_detail", :collection => @authors, :as => :author %>
 </table>
 
-<br />
+<br/>
 
 <%= link_to 'New Author', new_author_path %>
+
+
+

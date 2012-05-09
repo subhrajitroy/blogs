@@ -11,17 +11,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120311114101) do
+ActiveRecord::Schema.define(:version => 20120410105731) do
 
   create_table "authors", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "categories", :force => true do |t|
-    t.string   "name"
-    t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -32,7 +25,17 @@ ActiveRecord::Schema.define(:version => 20120311114101) do
     t.string   "content"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "author_id"
   end
+
+  create_table "reviewers", :force => true do |t|
+    t.string  "name"
+    t.string  "favourite_author"
+    t.string  "books"
+    t.integer "books_reviewed"
+    t.decimal "popularity",       :precision => 10, :scale => 0
+    t.string  "email",                                           :default => "nomail@mailinator.com", :null => false
+  end
+
+  add_index "reviewers", ["email"], :name => "index_reviewers_on_email", :unique => true
 
 end
